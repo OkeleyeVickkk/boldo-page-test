@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@font-face {
+	font-family: "Manrope";
+	src: url("/src/assets/fonts/Manrope-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Open Sans";
+	src: url("/src/assets/fonts/OpenSans-VariableFont_wght.ttf") format("truetype");
+}
+
+:root {
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+button,
+a {
+	cursor: pointer;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* additions */
+@theme {
+	--color-primary: #0a2640;
+	--color-sec: #65e4a3;
+
+	--font-manrope: "Manrope", "";
+	--font-osans: "Open Sans", "";
+}
