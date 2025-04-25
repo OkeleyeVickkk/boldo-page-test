@@ -4,7 +4,7 @@ import { navlinks } from "@/routes";
 
 const Header = () => {
 	return (
-		<header className="flex font-osans items-center justify-between py-8 w-full mx-auto relative z-[1]">
+		<header className="flex font-osans items-center justify-between pt-5 md:pt-8 pb-8 w-full mx-auto relative z-[1]">
 			<a href="#">
 				<figure className="max-w-32">
 					<img src={logo} alt={logo} className="" />

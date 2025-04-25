@@ -1,4 +1,4 @@
-import { leadership1, leadership2, leadership3, value1, value2, value3 } from "./images";
+import { hImg1, hImg2, hImg3, hImg4, hImg5, leadership1, leadership2, leadership3, value1, value2, value3 } from "./images";
 
 export const leadershipTeam = [
 	{
@@ -35,3 +35,20 @@ export const ourValues = [
 		texts: "Conversion angel investor entrepreneur first mover advantage. Handshake infographic mass market crowdfunding iteration. ",
 	},
 ];
+
+export const desktopLayout = [
+	{
+		images: [hImg1, hImg2],
+		className: "flex flex-col gap-y-10",
+	},
+	{
+		images: [hImg3],
+		className: "flex flex-col gap-y-10",
+	},
+	{
+		images: [hImg4, hImg5],
+		className: "flex flex-col gap-y-10",
+	},
+];
+
+export const mobileImages = [hImg1, hImg2, hImg3, hImg4, hImg5];
