@@ -43,7 +43,7 @@ function App() {
 					</Container>
 				</section>
 				<section className="z-10">
-					<Container mediaquery="w-full !px-0 sm:!px-3 xl:w-10/12 z-10 -mt-32 xl:-mt-20">
+					<Container mediaquery="w-full !px-0 sm:!px-3 xl:w-10/12 z-10 -mt-40 xl:-mt-20">
 						<Gallery />
 					</Container>
 					<Container mediaquery="xl:w-9/12 py-20">
