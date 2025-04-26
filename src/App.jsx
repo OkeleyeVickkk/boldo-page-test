@@ -36,7 +36,7 @@ function App() {
 							</div>
 							<div className="font-manrope">
 								<FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
-									<h2 className="text-5xl md:text-[52px] lg:text-[52px] xl:text-6xl md:leading-[1.3] lg:leading-[1.3] xl:leading-20 relative">
+									<h2 className="text-4xl md:text-[52px] lg:text-[52px] xl:text-6xl md:leading-[1.3] lg:leading-[1.3] xl:leading-20 relative">
 										We love to make great things, things that matter.
 									</h2>
 								</FadeContent>
