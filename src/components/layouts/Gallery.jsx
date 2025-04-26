@@ -20,7 +20,7 @@ export const Gallery = () => (
 		</section>
 
 		{/* Mobile Layout */}
-		<section role="presentation" className="xl:hidden">
+		<section role="presentation" className="xl:hidden absolute top-1/2 left-0">
 			<ScrollVelocity images={[...mobileImages]} velocity={30} />
 		</section>
 	</>
