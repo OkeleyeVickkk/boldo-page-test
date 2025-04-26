@@ -7,7 +7,7 @@ const Header = () => {
 	const { stateData, toggleMenu, closeMenu, openMenu } = useMenu();
 
 	return (
-		<header className="fixed top-0 right-0 left-0 px-6 flex font-osans items-center justify-between pt-5 md:pt-8 pb-8 xl:w-full mx-auto xl:relative z-[100]">
+		<header className="fixed top-0 right-0 left-0 px-6 lg:px-0 flex font-osans items-center justify-between pt-5 md:pt-6 pb-6 xl:w-full mx-auto lg:relative z-[100] backdrop-blur-sm">
 			<a href="#">
 				<figure className="max-w-32">
 					<img src={logo} alt={logo} className="" />

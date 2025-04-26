@@ -9,7 +9,6 @@ import ScrollFloat from "./components/animations/ScrollFloat";
 import VariableProximity from "./components/animations/VariableProximity";
 import CountUp from "./components/animations/Countup";
 import FadeContent from "./components/animations/FadeContent";
-import DecryptedText from "./components/animations/DecryptedText";
 import TrueFocus from "./components/animations/TrueFocus";
 
 // components
@@ -27,10 +26,10 @@ function App() {
 
 	return (
 		<div className="bg-white relative flex flex-col">
-			<section className="min-h-[90dvh] lg:min-h-[95vh] overflow-hidden bg-primary">
-				<Container mediaquery="xl:w-11/12">
+			<section className="min-h-[90vh] sm:min-h-screen lg:min-h-[95vh] overflow-hidden bg-primary">
+				<Container mediaquery="xl:w-11/12 flex items-center">
 					<Header />
-					<div className="pt-[120px] md:pt-[90px] lg:pt-[100px] mt-10 xl:pt-0">
+					<div className="pt-[100px] md:pt-24 mt-10 xl:pt-0">
 						<div className="flex text-center items-center flex-col gap-y-6 text-white lg:w-10/12 xl:w-7/12 mx-auto">
 							<div className="font-osans text-[17px] tracking-wider text-[#F1F1F1]">
 								<span>About</span>
@@ -42,14 +41,8 @@ function App() {
 							</div>
 							<div className="font-osans w-11/12 mx-auto leading-8 mt-2 text-[#F1F1F1]">
 								<p>
-									<DecryptedText
-										text="Funding handshake buyer business-to-business metrics iPad partnership. First mover advantage innovator success deployment non-disclosure."
-										speed={250}
-										animateOn="view"
-										useOriginalCharsOnly={true}
-										revealDirection="start"
-										maxIterations={20}
-									/>
+									Funding handshake buyer business-to-business metrics iPad partnership. First mover advantage innovator success deployment
+									non-disclosure.
 								</p>
 							</div>
 						</div>
@@ -60,7 +53,7 @@ function App() {
 				<Container mediaquery="w-full relative !px-0 xl:!px-3 lg:!w-full xl:!w-10/12 z-[5] -mt-28 xl:-mt-20">
 					<Gallery />
 				</Container>
-				<Container mediaquery="xl:w-9/12 pb-20 pt-[350px] xl:pt-20">
+				<Container mediaquery="xl:w-9/12 py-20 lg:pt-20">
 					<section className="xl:w-7/10 mx-auto flex flex-col gap-y-4">
 						<div>
 							<span className="text-osans text-[#777777] text-[17px]">Our Story</span>
