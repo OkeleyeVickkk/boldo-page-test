@@ -31,8 +31,8 @@ img {
 	--color-primary: var(--primary-clr);
 	--color-sec: #65e4a3;
 
-	--font-manrope: "Manrope", "";
-	--font-osans: "Open Sans", "";
+	--font-manrope: "Manrope", "Open Sans", system-ui, Helvetica;
+	--font-osans: "Open Sans", "Manrope", system-ui, Helvetica;
 }
 
 .v-link {

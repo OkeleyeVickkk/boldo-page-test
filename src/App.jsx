@@ -1,16 +1,24 @@
 import React from "react";
-import { Container } from "./components/layouts/Container";
-import Footer from "./components/layouts/Footer";
+
+// data
 import { featureData, leadershipTeam, ourValues } from "./data";
+
+// animations
 import ScrollReveal from "./components/animations/ScrollReveal";
 import ScrollFloat from "./components/animations/ScrollFloat";
 import VariableProximity from "./components/animations/VariableProximity";
-import TrueFocus from "./components/animations/TrueFocus";
-import { Gallery } from "./components/layouts/Gallery";
-import FadeContent from "./components/animations/FadeContent";
 import CountUp from "./components/animations/Countup";
-import BlurText from "./components/animations/BlurText";
+import FadeContent from "./components/animations/FadeContent";
+import DecryptedText from "./components/animations/DecryptedText";
+import TrueFocus from "./components/animations/TrueFocus";
+
+// components
+import { Gallery } from "./components/layouts/Gallery";
+import { Container } from "./components/layouts/Container";
+
+// layouts
 import Sidebar from "./components/layouts/Sidebar";
+import Footer from "./components/layouts/Footer";
 
 const Header = React.lazy(() => import("@/components/layouts/Header"));
 
@@ -28,18 +36,20 @@ function App() {
 								<span>About</span>
 							</div>
 							<div className="font-manrope">
-								<BlurText
-									text="We love to make great things, things that matter."
-									delay={150}
-									animateBy="words"
-									direction="top"
-									className="text-4xl md:text-[64px] md:leading-20 relative"
-								/>
+								<FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
+									<h2 className="text-4xl md:text-[64px] md:leaing-20 relative">We love to make great things, things that matter.</h2>
+								</FadeContent>
 							</div>
 							<div className="font-osans w-11/12 mx-auto leading-8 mt-2 text-[#F1F1F1]">
 								<p>
-									Funding handshake buyer business-to-business metrics iPad partnership. First mover advantage innovator success deployment
-									non-disclosure.
+									<DecryptedText
+										text="Funding handshake buyer business-to-business metrics iPad partnership. First mover advantage innovator success deployment non-disclosure."
+										speed={250}
+										animateOn="view"
+										useOriginalCharsOnly={true}
+										revealDirection="start"
+										maxIterations={20}
+									/>
 								</p>
 							</div>
 						</div>
