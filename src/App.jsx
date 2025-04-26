@@ -27,16 +27,18 @@ function App() {
 	return (
 		<div className="bg-white relative flex flex-col">
 			<section className="min-h-[90vh] sm:min-h-screen lg:min-h-[95vh] overflow-hidden bg-primary">
-				<Container mediaquery="xl:w-11/12 flex items-center">
+				<Container mediaquery="xl:w-11/12 !px-0">
 					<Header />
-					<div className="pt-[100px] md:pt-24 mt-10 xl:pt-0">
+					<div className="pt-[100px] md:pt-5 lg:pt-10 mt-10 xl:pt-0">
 						<div className="flex text-center items-center flex-col gap-y-6 text-white lg:w-10/12 xl:w-7/12 mx-auto">
 							<div className="font-osans text-[17px] tracking-wider text-[#F1F1F1]">
 								<span>About</span>
 							</div>
 							<div className="font-manrope">
 								<FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
-									<h2 className="text-4xl md:text-[64px] md:leaing-20 relative">We love to make great things, things that matter.</h2>
+									<h2 className="text-4xl md:text-6xl xl:text-[64px] md:leading-[1.5] lg:leading-16 xl:leading-20 relative">
+										We love to make great things, things that matter.
+									</h2>
 								</FadeContent>
 							</div>
 							<div className="font-osans w-11/12 mx-auto leading-8 mt-2 text-[#F1F1F1]">

@@ -39,15 +39,15 @@ export const ourValues = [
 export const desktopLayout = [
 	{
 		images: [hImg1, hImg2],
-		className: "flex flex-col gap-y-10",
+		className: "flex flex-col gap-y-8 xl:gap-y-10",
 	},
 	{
 		images: [hImg3],
-		className: "flex flex-col gap-y-10",
+		className: "flex flex-col gap-y-8 xl:gap-y-10",
 	},
 	{
 		images: [hImg4, hImg5],
-		className: "flex flex-col gap-y-10",
+		className: "flex flex-col gap-y-8 xl:gap-y-10",
 	},
 ];
 
