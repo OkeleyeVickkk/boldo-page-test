@@ -2,7 +2,6 @@ import React from "react";
 import { Container } from "./components/layouts/Container";
 import Footer from "./components/layouts/Footer";
 import { featureData, leadershipTeam, ourValues } from "./data";
-import SimpleParallax from "simple-parallax-js";
 import ScrollReveal from "./components/animations/ScrollReveal";
 import ScrollFloat from "./components/animations/ScrollFloat";
 import VariableProximity from "./components/animations/VariableProximity";
