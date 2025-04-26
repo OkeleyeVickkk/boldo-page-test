@@ -14,7 +14,7 @@ export default function Footer() {
 							<img src={darkLogo} alt={darkLogo} />
 						</figure>
 					</a>
-					<div className="w-full sm:w-5/6 text-balance text-[#777777] leading-6 text-[.95rem] font-normal">
+					<div className="w-full sm:w-5/6 sm:text-balance text-[#777777] leading-6 text-[.95rem] font-normal">
 						<p>Social media validation business model canvas graphical user interface launch party creative facebook iPad twitter.</p>
 					</div>
 					<div className="mt-auto text-[#777777] text-[.96rem]">
