@@ -1,15 +1,17 @@
 import React from "react";
 import { Container } from "./components/layouts/Container";
 import Footer from "./components/layouts/Footer";
-import { leadershipTeam, mobileImages, ourValues } from "./data";
-import { hImg1, hImg2, hImg3, hImg4, hImg5 } from "./data/images";
+import { featureData, leadershipTeam, ourValues } from "./data";
 import SimpleParallax from "simple-parallax-js";
 import ScrollReveal from "./components/animations/ScrollReveal";
 import ScrollFloat from "./components/animations/ScrollFloat";
 import VariableProximity from "./components/animations/VariableProximity";
 import TrueFocus from "./components/animations/TrueFocus";
 import { Gallery } from "./components/layouts/Gallery";
-import ScrollVelocity from "./components/animations/ScrollVelocity";
+import FadeContent from "./components/animations/FadeContent";
+import CountUp from "./components/animations/Countup";
+import BlurText from "./components/animations/BlurText";
+import Sidebar from "./components/layouts/Sidebar";
 
 const Header = React.lazy(() => import("@/components/layouts/Header"));
 
@@ -18,19 +20,23 @@ function App() {
 
 	return (
 		<SimpleParallax scale={1.25}>
-			<div className="bg-white scale-80 relative isolate flex flex-col">
-				<section className="min-h-[90dvh] overflow-hidden bg-primary">
+			<div className="bg-white scale-80 relative flex flex-col">
+				<section className="min-h-[90dvh] lg:min-h-[95vh] overflow-hidden bg-primary">
 					<Container mediaquery="xl:w-11/12">
 						<Header />
-						<div className="mt-10">
+						<div className="pt-[120px] md:pt-[90px] lg:pt-[100px] mt-10 xl:pt-0">
 							<div className="flex text-center items-center flex-col gap-y-6 text-white lg:w-10/12 xl:w-7/12 mx-auto">
 								<div className="font-osans text-[17px] tracking-wider text-[#F1F1F1]">
 									<span>About</span>
 								</div>
 								<div className="font-manrope">
-									<h1 className="text-4xl md:text-[64px] md:leading-20 relative" ref={proximityContainerRef}>
-										We love to make great things, things that matter.
-									</h1>
+									<BlurText
+										text="We love to make great things, things that matter."
+										delay={150}
+										animateBy="words"
+										direction="top"
+										className="text-4xl md:text-[64px] md:leading-20 relative"
+									/>
 								</div>
 								<div className="font-osans w-11/12 mx-auto leading-8 mt-2 text-[#F1F1F1]">
 									<p>
@@ -43,7 +49,7 @@ function App() {
 					</Container>
 				</section>
 				<section className="z-10">
-					<Container mediaquery="w-full !px-0 sm:!px-3 xl:w-10/12 z-10 -mt-40 xl:-mt-20">
+					<Container mediaquery="w-full !px-0 xl:!px-3 lg:!w-full xl:!w-10/12 z-[5] -mt-28 xl:-mt-20">
 						<Gallery />
 					</Container>
 					<Container mediaquery="xl:w-9/12 py-20">
@@ -64,12 +70,14 @@ function App() {
 								</h3>
 							</div>
 							<div className="mt-3">
-								<p className="font-osans text-lg text-balance text-[#777777]">
-									Conversion angel investor entrepreneur first mover advantage. Handshake infographic mass market crowdfunding iteration. Traction
-									stock user experience deployment beta innovator incubator focus. Sales user experience branding growth hacking holy grail
-									monetization conversion prototype stock network effects. Learning curve network effects return on investment bootstrapping
-									business-to-consumer.{" "}
-								</p>
+								<FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
+									<p className="font-osans text-lg text-balance text-[#777777]">
+										Conversion angel investor entrepreneur first mover advantage. Handshake infographic mass market crowdfunding iteration. Traction
+										stock user experience deployment beta innovator incubator focus. Sales user experience branding growth hacking holy grail
+										monetization conversion prototype stock network effects. Learning curve network effects return on investment bootstrapping
+										business-to-consumer.
+									</p>
+								</FadeContent>
 							</div>
 						</section>
 					</Container>
@@ -79,7 +87,7 @@ function App() {
 						<section className="xl:w-7/10 mx-auto flex flex-col gap-y-4">
 							<div className="text-center flex flex-col gap-y-4 text-white">
 								<span className="text-osans text-[#F1F1F1] text-[17px]">Our numbers</span>
-								<h3 className="text-4xl xl:text-5xl font-manrope xl:leading-[72px]">
+								<h3 className="text-[2rem] sm:text-2xl xl:text-5xl font-manrope xl:leading-[72px]" ref={proximityContainerRef}>
 									<VariableProximity
 										label={"Handshake infographic mass market crowdfunding iteration."}
 										className={"variable-proximity-demo"}
@@ -94,24 +102,17 @@ function App() {
 						</section>
 						<section className="xl:w-full mx-auto mt-18">
 							<div className="font-manrope mt-3 gap-10 grid grid-cols-1 sm:grid-cols-3">
-								<aside className="flex items-center justify-center">
-									<div className="flex flex-col items-center lg:items-start gap-y-3">
-										<h2 className="text-6xl xl:text-8xl text-sec">120m</h2>
-										<p className="text-white text-base xl:text-lg font-osans">Cool feature title</p>
-									</div>
-								</aside>
-								<aside className="flex items-center justify-center">
-									<div className="flex flex-col items-center lg:items-start gap-y-3">
-										<h2 className="text-6xl xl:text-8xl text-sec">10.000</h2>
-										<p className="text-white text-base xl:text-lg font-osans">Cool feature title</p>
-									</div>
-								</aside>
-								<aside className="flex items-center justify-center">
-									<div className="flex flex-col items-center lg:items-start gap-y-3">
-										<h2 className="text-6xl xl:text-8xl text-sec">240</h2>
-										<p className="text-white text-base xl:text-lg font-osans">Cool feature title</p>
-									</div>
-								</aside>
+								{featureData.map((feature, index) => (
+									<aside key={index} className="flex items-center justify-center">
+										<div className="flex flex-col items-center lg:items-start gap-y-3">
+											<h2 className="text-6xl xl:text-8xl text-sec">
+												<CountUp from={0} to={feature.to} duration={feature.duration} />
+												{feature.suffix}
+											</h2>
+											<p className="text-white text-base xl:text-lg font-osans">{feature.title}</p>
+										</div>
+									</aside>
+								))}
 							</div>
 						</section>
 					</Container>
@@ -143,9 +144,13 @@ function App() {
 								{leadershipTeam.map((leader, index) => {
 									return (
 										<React.Fragment key={index}>
-											<aside className="flex flex-col gap-y-4">
-												<figure className="flex overflow-auto rounded-3xl h-[420px] aspect-[1/1.5]">
-													<img src={leader.src} alt={leader.src} className="w-full h-full object-cover" />
+											<aside className="flex flex-col gap-y-4 group">
+												<figure className="flex overflow-hidden rounded-3xl h-[420px] aspect-[1/1.5] relative image-mask">
+													<img
+														src={leader.src}
+														alt={leader.src}
+														className="w-full h-full object-cover group-hover:scale-110 transition-all ease-in-out duration-300"
+													/>
 												</figure>
 												<div className="flex flex-col gap-y-3">
 													<h2 className="text-xl">{leader.name}</h2>
@@ -163,7 +168,7 @@ function App() {
 					<Container mediaquery="xl:w-9/12">
 						<section className="xl:w-7/10 mx-auto flex flex-col gap-y-4">
 							<div>
-								<span className="text-osans font-normal text-white text-[20px]">Our values</span>
+								<span className="text-osans font-normal text-white text-lg">Our values</span>
 							</div>
 							<div className="text-start">
 								<h3 className="text-5xl font-manrope text-start text-white leading-16 lg:leading-[72px]">
@@ -172,7 +177,7 @@ function App() {
 							</div>
 							<div className="w-11/12 mt-3">
 								<div className="font-osans text-[.98rem] sm:text-[1.1rem] font-normal text-[#f1f1f1]">
-									<ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={30} blurStrength={5}>
+									<ScrollReveal baseOpacity={0} enableBlur={true} baseRotation={-30} blurStrength={5}>
 										Conversion angel investor entrepreneur first mover advantage. Handshake infographic mass market crowdfunding iteration. Traction
 										stock user experience deployment beta innovator incubator focus.
 									</ScrollReveal>
@@ -180,23 +185,28 @@ function App() {
 							</div>
 							<div className="w-full flex flex-col gap-y-14 mt-14">
 								{ourValues.map((value, index) => (
-									<div role="presentation" key={index} className="flex items-start gap-5 sm:gap-10">
-										<aside>
-											<figure className="rounded-2xl sm:rounded-3xl overflow-hidden flex aspect-square w-[7rem] sm:w-[8.75rem]">
-												<img src={value.src} alt={value.src} className="flex-grow object-cover" />
-											</figure>
-										</aside>
-										<aside className="flex flex-col gap-y-4">
-											<h4 className="text-xl font-manrope text-white">{value.title}</h4>
-											<p className="font-osans text-[.95rem] sm:text-base text-[#f1f1f1]">{value.texts}</p>
-										</aside>
-									</div>
+									<React.Fragment key={index}>
+										<FadeContent blur={true} delay={0.5 * (index - 1)} duration={1000} easing="ease-out" initialOpacity={0}>
+											<div role="presentation" className="flex items-start gap-5 sm:gap-10">
+												<aside>
+													<figure className="rounded-2xl sm:rounded-3xl overflow-hidden flex aspect-square w-[7rem] sm:w-[8.75rem]">
+														<img src={value.src} alt={value.src} className="flex-grow object-cover" />
+													</figure>
+												</aside>
+												<aside className="flex flex-col gap-y-4">
+													<h4 className="text-lg sm:text-xl font-manrope text-white">{value.title}</h4>
+													<p className="font-osans text-[.85em] sm:text-[.95rem] sm:text-base text-[#f1f1f1]">{value.texts}</p>
+												</aside>
+											</div>
+										</FadeContent>
+									</React.Fragment>
 								))}
 							</div>
 						</section>
 					</Container>
 				</section>
 				<Footer />
+				<Sidebar />
 			</div>
 		</SimpleParallax>
 	);

@@ -5,12 +5,11 @@ export default function FooterBanner() {
 	return (
 		<>
 			<div className="bg-primary relative min-h-[400px] p-10 flex items-center justify-center overflow-hidden rounded-xl" role="banner">
-				<figure className="absolute -top-1/2 right-0" role="presentation">
+				<figure className="absolute top-0 -right-1/5 lg:right-0 lg:-top-1/2 lg:-translate-y-1/12" role="presentation">
 					<img src={eclipseShape} alt={eclipseShape} />
 				</figure>
 				<div className="relative md:w-10/12 xl:w-7/10 mx-auto">
 					<Parallax
-						bgImage="/path/to/another/image"
 						className="w-full !overflow-visible"
 						renderLayer={(percentage) => (
 							<div

@@ -1,7 +1,7 @@
 import { darkLogo } from "@/data/images";
 import { Container } from "./Container";
 import FooterBanner from "./FooterBanner";
-import { footerLinks } from "../../routes";
+import { footerLinks } from "@/routes";
 
 export default function Footer() {
 	return (
@@ -32,7 +32,7 @@ export default function Footer() {
 									{eachLink.links.length &&
 										eachLink.links.map((sublink, sublinkIndex) => (
 											<li key={sublinkIndex}>
-												<a href={sublink.route} className="text-[#777777] text-[.96rem]">
+												<a href={sublink.route} className="text-[#777777] text-[.96rem] v-link">
 													{sublink.title}
 													{sublink?.hasBadge && (
 														<span className="text-primary bg-[#65E4A3] rounded-full text-[.85rem] py-1 px-2 font-bold ml-2">{sublink.badgeText}</span>

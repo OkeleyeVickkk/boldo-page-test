@@ -52,3 +52,9 @@ export const desktopLayout = [
 ];
 
 export const mobileImages = [hImg1, hImg2, hImg3, hImg4, hImg5];
+
+export const featureData = [
+	{ to: 120, duration: 5, suffix: "m", title: "Cool feature title" },
+	{ to: 10, duration: 3, suffix: ".000", title: "Cool feature title" },
+	{ to: 240, duration: 4, suffix: "", title: "Cool feature title" },
+];

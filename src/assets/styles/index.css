@@ -14,6 +14,7 @@
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	--primary-clr: #0a2640;
 }
 
 button,
@@ -27,9 +28,50 @@ img {
 
 /* additions */
 @theme {
-	--color-primary: #0a2640;
+	--color-primary: var(--primary-clr);
 	--color-sec: #65e4a3;
 
 	--font-manrope: "Manrope", "";
 	--font-osans: "Open Sans", "";
+}
+
+.v-link {
+	position: relative;
+	transition: all 300ms ease-in-out;
+}
+.v-link::before {
+	height: 1px;
+	width: 100%;
+	background-color: #fff;
+	content: "";
+	left: 0;
+	bottom: 0;
+	position: absolute;
+	transform-origin: bottom right;
+	display: block;
+	transition: transform 300ms ease-in-out;
+	transform: scaleX(0);
+}
+footer .v-link:not(:has(> span))::before {
+	background-color: var(--primary-clr);
+}
+footer .v-link:has(> span)::before {
+	opacity: 0;
+}
+footer .v-link:hover {
+	color: var(--primary-clr);
+}
+.v-link:hover::before {
+	transform: scaleX(1);
+	transform-origin: bottom left;
+}
+body:has(.is-active-sb) {
+	overflow: -moz-hidden-unscrollable;
+	overflow: hidden;
+}
+
+@layer {
+	.image-mask {
+		@apply relative before:content-[''] before:absolute before:inset-0 before:transition before:duration-300 before:ease-in-out before:opacity-0 hover:before:opacity-50 before:bg-gradient-to-t before:from-black/50 before:via-black/50 before:to-transparent before:z-10;
+	}
 }
